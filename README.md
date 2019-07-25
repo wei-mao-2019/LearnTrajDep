@@ -1,7 +1,7 @@
 ## Learning Trajectory Dependencies for Human Motion Prediction
 This is the code for the paper
 
-Wei Mao, Miaomiao Liu, Mathieu Salzmann, Hongdong Li
+Wei Mao, Miaomiao Liu, Mathieu Salzmann, Hongdong Li. 
 _Learning Trajectory Dependencies for Human Motion Prediction_. In ICCV 19.
 
 ### Dependencies
@@ -9,11 +9,11 @@ _Learning Trajectory Dependencies for Human Motion Prediction_. In ICCV 19.
 * [Pytorch](https://github.com/pytorch/pytorch) 0.3.1.
 
 ### Get the data
-Exponential map of [Human3.6m](http://vision.imar.ro/human3.6m/description.php) can be downloaded from [here](http://www.cs.stanford.edu/people/ashesh/h3.6m.zip).
+[Human3.6m](http://vision.imar.ro/human3.6m/description.php) in exponential map can be downloaded from [here](http://www.cs.stanford.edu/people/ashesh/h3.6m.zip).
 
 [CMU mocap](http://mocap.cs.cmu.edu/) was obtained from the [repo](https://github.com/chaneyddtt/Convolutional-Sequence-to-Sequence-Model-for-Human-Dynamics) of ConvSeq2Seq paper.
 
-[3DPW](https://virtualhumans.mpi-inf.mpg.de/3DPW/)
+[3DPW](https://virtualhumans.mpi-inf.mpg.de/3DPW/) from their official website.
 
 ### Quick demo and visualization
 
