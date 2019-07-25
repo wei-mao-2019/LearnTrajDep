@@ -10,10 +10,10 @@ The code in this repository was written by [Julieta Martinez](https://github.com
 
 ### Dependencies
 
-* [h5py](https://github.com/h5py/h5py) -- to save samples
-* [Tensorflow](https://github.com/tensorflow/tensorflow/) 1.2 or later.
+* [Pytorch](https://github.com/pytorch/pytorch) 0.3.1.
 
-### Get this code and the data
+### Get the data
+#### H36M: http://www.cs.stanford.edu/people/ashesh/h3.6m.zip
 
 First things first, clone this repo and get the human3.6m dataset on exponential map format.
 
