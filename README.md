@@ -13,9 +13,7 @@ The code in this repository was written by [Julieta Martinez](https://github.com
 * [Pytorch](https://github.com/pytorch/pytorch) 0.3.1.
 
 ### Get the data
-#### H36M: http://www.cs.stanford.edu/people/ashesh/h3.6m.zip
-
-First things first, clone this repo and get the human3.6m dataset on exponential map format.
+Exponential map form of [Human3.6m](http://vision.imar.ro/human3.6m/description.php) can be downloaded from [here](http://www.cs.stanford.edu/people/ashesh/h3.6m.zip).
 
 ```bash
 git clone https://github.com/una-dinosauria/human-motion-prediction.git
