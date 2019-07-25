@@ -1,30 +1,19 @@
 ## Learning Trajectory Dependencies for Human Motion Prediction
 This is the code for the paper
 
-Julieta Martinez, Michael J. Black, Javier Romero.
-_On human motion prediction using recurrent neural networks_. In CVPR 17.
-
-It can be found on arxiv as well: https://arxiv.org/pdf/1705.02445.pdf
-
-The code in this repository was written by [Julieta Martinez](https://github.com/una-dinosauria/) and [Javier Romero](https://github.com/libicocco/).
+Wei Mao, Miaomiao Liu, Mathieu Salzmann, Hongdong Li
+_Learning Trajectory Dependencies for Human Motion Prediction_. In ICCV 19.
 
 ### Dependencies
 
 * [Pytorch](https://github.com/pytorch/pytorch) 0.3.1.
 
 ### Get the data
-Exponential map form of [Human3.6m](http://vision.imar.ro/human3.6m/description.php) can be downloaded from [here](http://www.cs.stanford.edu/people/ashesh/h3.6m.zip).
+Exponential map of [Human3.6m](http://vision.imar.ro/human3.6m/description.php) can be downloaded from [here](http://www.cs.stanford.edu/people/ashesh/h3.6m.zip).
 
-```bash
-git clone https://github.com/una-dinosauria/human-motion-prediction.git
-cd human-motion-prediction
-mkdir data
-cd data
-wget http://www.cs.stanford.edu/people/ashesh/h3.6m.zip
-unzip h3.6m.zip
-rm h3.6m.zip
-cd ..
-```
+[CMU mocap](http://mocap.cs.cmu.edu/) was obtained from the [repo](https://github.com/chaneyddtt/Convolutional-Sequence-to-Sequence-Model-for-Human-Dynamics) of ConvSeq2Seq paper.
+
+[3DPW](https://virtualhumans.mpi-inf.mpg.de/3DPW/)
 
 ### Quick demo and visualization
 
