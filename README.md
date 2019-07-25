@@ -1,4 +1,13 @@
-# Learning Trajectory Dependencies for Human Motion Prediction
+## Learning Trajectory Dependencies for Human Motion Prediction
+This is the code for the paper
+
+Julieta Martinez, Michael J. Black, Javier Romero.
+_On human motion prediction using recurrent neural networks_. In CVPR 17.
+
+It can be found on arxiv as well: https://arxiv.org/pdf/1705.02445.pdf
+
+The code in this repository was written by [Julieta Martinez](https://github.com/una-dinosauria/) and [Javier Romero](https://github.com/libicocco/).
+
 ### Dependencies
 
 * [h5py](https://github.com/h5py/h5py) -- to save samples
@@ -90,10 +99,6 @@ If you use our code, please cite our work
   year={2017}
 }
 ```
-
-### Other implementations
-
-* [Pytorch](https://github.com/enriccorona/human-motion-prediction-pytorch) by [@enriccorona](https://github.com/enriccorona)
 
 ### Acknowledgments
 
