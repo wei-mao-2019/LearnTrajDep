@@ -20,12 +20,12 @@ _Learning Trajectory Dependencies for Human Motion Prediction_. In ICCV 19.
 
 ### Quick demo and visualization
 
-For a quick demo, you can train for a few iterations and visualize the outputs
+For a quick demo, you can train for a few epochs and visualize the outputs
 of your model.
 
 To train, run
 ```bash
-python main.py --input_n 10 --output 10 --dct_n 20 --data_dir [Path To Your H36M data]/h3.6m/dataset/
+python main.py --epoch 5 --input_n 10 --output 10 --dct_n 20 --data_dir [Path To Your H36M data]/h3.6m/dataset/
 ```
 
 Visualize the results of pretrained model for predictions on angle space on H36M dataset.
@@ -50,7 +50,7 @@ We re-run our code 2 more times under different setups and the overall average r
 | test_run_1 | 12.1 | 24.6 | 50.4 | 61.1 |
 | test_run_2 | 12.1 | 24.8 | 50.5 | 61.2 |
 
-* Human3.6-long-term prediction on angle space
+* Human3.6-long-term prediction
 
 |             | 560ms  |1000ms|
 |-------------|--------|------|
@@ -62,7 +62,7 @@ We re-run our code 2 more times under different setups and the overall average r
 | test_run_1  | 51.2   | 71.6 |
 | test_run_2  | 51.6   | 70.9 |
 
-* 3DPW dataset
+* 3DPW
 
 |             | 200ms | 400ms | 600ms | 800ms | 1000ms |
 |-------------|-------|-------|-------|-------|--------|
@@ -74,7 +74,7 @@ We re-run our code 2 more times under different setups and the overall average r
 | test_run_1  | 36.7  | 69.6  | 90.8  | 105.0 | 115.3  |
 | test_run_2  | 35.8  | 69.1  | 93.2  | 110.9 | 121.7  |
 
-* CMU-mocap dataset
+* CMU-mocap
 
 |             | 80ms | 160ms | 320ms | 400ms | 1000ms |
 |-------------|------|-------|-------|-------|--------|
@@ -91,17 +91,17 @@ We re-run our code 2 more times under different setups and the overall average r
 If you use our code, please cite our work
 
 ```
-@inproceedings{julieta2017motion,
-  title={On human motion prediction using recurrent neural networks},
-  author={Martinez, Julieta and Black, Michael J. and Romero, Javier},
-  booktitle={CVPR},
-  year={2017}
+@inproceedings{wei2019motion,
+  title={Learning Trajectory Dependencies for Human Motion Prediction},
+  author={Wei, Mao and Miaomiao, Liu and Mathieu, Salzemann and Hongdong, Li},
+  booktitle={ICCV},
+  year={2019}
 }
 ```
 
 ### Acknowledgments
 
-The pre-processed human 3.6m dataset and some of our evaluation code (specially under `src/data_utils.py`) was ported/adapted from [SRNN](https://github.com/asheshjain399/RNNexp/tree/srnn/structural_rnn) by [@asheshjain399](https://github.com/asheshjain399).
+Some of our evaluation code and data process code was adapted/ported from [Residual Sup. RNN](https://github.com/una-dinosauria/human-motion-prediction) by [Julieta](https://github.com/una-dinosauria). The overall code framework (dataloading, training, testing etc.) is adapted from [3d-pose-baseline](https://github.com/una-dinosauria/3d-pose-baseline). 
 
 ### Licence
 MIT
