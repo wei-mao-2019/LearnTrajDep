@@ -6,7 +6,10 @@ _Learning Trajectory Dependencies for Human Motion Prediction_. In ICCV 19.
 
 ### Dependencies
 
+* cuda 9.0
+* Python 3.6
 * [Pytorch](https://github.com/pytorch/pytorch) 0.3.1.
+* [progress 1.5](https://pypi.org/project/progress/)
 
 ### Get the data
 [Human3.6m](http://vision.imar.ro/human3.6m/description.php) in exponential map can be downloaded from [here](http://www.cs.stanford.edu/people/ashesh/h3.6m.zip).
@@ -22,57 +25,66 @@ of your model.
 
 To train, run
 ```bash
-python src/translate.py --action walking --seq_length_out 25 --iterations 10000
+python main.py --input_n 10 --output 10 --dct_n 20 --data_dir [Path To Your H36M data]/h3.6m/dataset/
 ```
 
-To save some samples of the model, run
+Visualize the results of pretrained model for predictions on angle space on H36M dataset.
+* change the model path
+* then run the command below
 ```bash
-python src/translate.py --action walking --seq_length_out 25 --iterations 10000 --sample --load 10000
+python demo.py --input_n 10 --output_n 10 --dct_n 20 --data_dir [Path To Your H36M data]/h3.6m/dataset/
 ```
 
-Finally, to visualize the samples run
-```bash
-python src/forward_kinematics.py
-```
+### Results
+We re-run our code 2 more times under different setups and the overall average results at different time are reported below.
 
-This should create a visualization similar to this one
+* Human3.6-short-term prediction on angle space (top) and 3D coordinate (bottom)
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/una-dinosauria/human-motion-prediction/master/imgs/walking.gif"><br><br>
-</p>
+|                | 80ms   | 160ms  | 320ms  | 400ms  |
+|----------------|------|------|------|------|
+| pre-trained | 0.27 | 0.51 | 0.83 | 0.95 |
+| test_run_1     | 0.28 | 0.52 | 0.84 | 0.96 |
+| test_run_2     | 0.28 | 0.52 | 0.84 | 0.96 |
+|----------------|------|------|------|------|
+| pre-trained | 12.1 | 25.0 | 51.0 | 61.3 |
+| test_run_1 | 12.1 | 24.6 | 50.4 | 61.1 |
+| test_run_2 | 12.1 | 24.8 | 50.5 | 61.2 |
 
+* Human3.6-long-term prediction on angle space
 
-### Running average baselines
+|             | 560ms  |1000ms|
+|-------------|--------|------|
+| pre-trained | 0.90   | 1.27 |
+| test_run_1  | 0.91   | 1.25 |
+| test_run_2  | 0.92   | 1.27 |
+|-------------|--------|------|
+| pre-trained | 50.4   | 71.0 |
+| test_run_1  | 51.2   | 71.6 |
+| test_run_2  | 51.6   | 70.9 |
 
-To reproduce the running average baseline results from our paper, run
+* 3DPW dataset
 
-`python src/baselines.py`
+|             | 200ms | 400ms | 600ms | 800ms | 1000ms |
+|-------------|-------|-------|-------|-------|--------|
+| pre-trained | 0.64  | 0.95  | 1.12  | 1.22  | 1.27   |
+| test_run_1  | 0.64  | 0.97  | 1.12  | 1.22  | 1.28   |
+| test_run_2  | 0.64  | 0.95  | 1.11  | 1.21  | 1.27   |
+|-------------|-------|-------|-------|-------|--------|
+| pre-trained | 35.6  | 67.8  | 90.6  | 106.9 | 117.8  |
+| test_run_1  | 36.7  | 69.6  | 90.8  | 105.0 | 115.3  |
+| test_run_2  | 35.8  | 69.1  | 93.2  | 110.9 | 121.7  |
 
-### RNN models
+* CMU-mocap dataset
 
-To train and reproduce the results of our models, use the following commands
-
-| model      | arguments | training time (gtx 1080) | notes |
-| ---        | ---       | ---   | --- |
-| Sampling-based loss (SA) | `python src/translate.py --action walking --seq_length_out 25` | 45s / 1000 iters | Realistic long-term motion, loss computed over 1 second. |
-| Residual (SA)            | `python src/translate.py --residual_velocities --action walking` | 35s / 1000 iters |  |
-| Residual unsup. (MA)     | `python src/translate.py --residual_velocities --learning_rate 0.005 --omit_one_hot` | 65s / 1000 iters | |
-| Residual sup. (MA)       | `python src/translate.py --residual_velocities --learning_rate 0.005` | 65s / 1000 iters | best quantitative.|
-| Untied       | `python src/translate.py --residual_velocities --learning_rate 0.005 --architecture basic` | 70s / 1000 iters | |
-
-
-You can substitute the `--action walking` parameter for any action in
-
-```
-["directions", "discussion", "eating", "greeting", "phoning",
- "posing", "purchases", "sitting", "sittingdown", "smoking",
- "takingphoto", "waiting", "walking", "walkingdog", "walkingtogether"]
-```
-
-or `--action all` (default) to train on all actions.
-
-The code will log the error in Euler angles for each action to [tensorboard](https://www.tensorflow.org/get_started/summaries_and_tensorboard). You can track the progress during training by typing `tensorboard --logdir experiments` in the terminal and checking the board under http://127.0.1.1:6006/ in your browser (occasionally, tensorboard might pick another url).
-
+|             | 80ms | 160ms | 320ms | 400ms | 1000ms |
+|-------------|------|-------|-------|-------|--------|
+| pre-trained | 0.25 | 0.39  | 0.68  | 0.79  | 1.33   |
+| test_run_1  | 0.26 | 0.41  | 0.72  | 0.84  | 1.35   |
+| test_run_2  | 0.26 | 0.41  | 0.71  | 0.83  | 1.38   |
+|-------------|------|-------|-------|-------|--------|
+| pre-trained | 11.5 | 20.4  | 37.8  | 46.8  | 96.5   |
+| test_run_1  | 11.3 | 19.8  | 36.9  | 45.5  | 92.7   |
+| test_run_2  | 11.3 | 19.7  | 37.2  | 46.0  | 94.0   |
 
 ### Citing
 
