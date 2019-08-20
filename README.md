@@ -2,7 +2,7 @@
 This is the code for the paper
 
 Wei Mao, Miaomiao Liu, Mathieu Salzmann, Hongdong Li. 
-_Learning Trajectory Dependencies for Human Motion Prediction_. In ICCV 19.
+[_Learning Trajectory Dependencies for Human Motion Prediction_](https://arxiv.org/abs/1908.05436). In ICCV 19.
 
 ### Dependencies
 
