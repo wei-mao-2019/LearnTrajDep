@@ -53,7 +53,7 @@ def main(opt):
     test_data = dict()
     for act in acts:
         test_dataset = H36motion(path_to_data=opt.data_dir, actions=act, input_n=input_n, output_n=output_n, split=1,
-                                 sample_rate=sample_rate, is_norm_dct=opt.is_norm_dct, is_norm_motion=opt.is_norm)
+                                 sample_rate=sample_rate)
         test_data[act] = DataLoader(
             dataset=test_dataset,
             batch_size=opt.test_batch,
@@ -67,7 +67,7 @@ def main(opt):
     fig = plt.figure()
     ax = plt.gca(projection='3d')
     for act in acts:
-        for i, (inputs, targets, all_seq, one_hot) in enumerate(test_data[act]):
+        for i, (inputs, targets, all_seq) in enumerate(test_data[act]):
             inputs = Variable(inputs).float()
             all_seq = Variable(all_seq).float()
             if is_cuda:
