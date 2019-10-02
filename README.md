@@ -34,6 +34,29 @@ Visualize the results of pretrained model for predictions on angle space on H36M
 ```bash
 python demo.py --input_n 10 --output_n 10 --dct_n 20 --data_dir [Path To Your H36M data]/h3.6m/dataset/
 ```
+### Training commands
+All the running args are defined in [opt.py](utils/opt.py). We use following commands to train on different datasets and representations.
+To train on angle space,
+```bash
+python main.py --data_dir "[Path To Your H36M data]/h3.6m/dataset/" --input_n 10 --output_n 10 --dct_n 20 --exp [where to save the log file]
+```
+```bash
+python main_cmu.py --data_dir_cmu "[Path To Your CMU data]/cmu_mocap/" --input_n 10 --output_n 25 --dct_n 35 --exp [where to save the log file]
+```
+```bash
+python main_3dpw.py --data_dir_3dpw "[Path To Your 3DPW data]/3DPW/sequenceFiles/" --input_n 10 --output_n 30 --dct_n 40 --exp [where to save the log file]
+```
+To train on 3D space,
+```bash
+python3 main_3d.py --data_dir "[Path To Your H36M data]/h3.6m/dataset/" --input_n 10 --output_n 10 --dct_n 15 --exp [where to save the log file]
+```
+```bash
+python main_cmu_3d.py --data_dir_cmu "[Path To Your CMU data]/cmu_mocap/" --input_n 10 --output_n 25 --dct_n 30 --exp [where to save the log file]
+```
+```bash
+python main_3dpw_3d.py --data_dir_3dpw "[Path To Your 3DPW data]/3DPW/sequenceFiles/" --input_n 10 --output_n 30 --dct_n 35 --exp [where to save the log file]
+```
+
 
 ### Results
 We re-run our code 2 more times under different setups and the overall average results at different time are reported below.
