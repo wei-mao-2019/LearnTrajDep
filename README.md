@@ -13,7 +13,7 @@ Wei Mao, Miaomiao Liu, Mathieu Salzmann, Hongdong Li.
 
 ### Get the data
 [Human3.6m](http://vision.imar.ro/human3.6m/description.php) in exponential map can be downloaded from [here](http://www.cs.stanford.edu/people/ashesh/h3.6m.zip).
-- UPDATE 2023-09: It seems the above link does not work any more. Please try to download from [here](https://drive.google.com/drive/folders/1zTghPRXPl5XTXdJa-L51O67RbpMkUB2Q?usp=sharing). Please follow [the license of the dataset](http://vision.imar.ro/human3.6m/eula.php).
+- UPDATE 2023-09: It seems the above link does not work any more. Please try to download the dataset from [here](https://drive.google.com/drive/folders/1zTghPRXPl5XTXdJa-L51O67RbpMkUB2Q?usp=sharing). Please follow [the license of the dataset](http://vision.imar.ro/human3.6m/eula.php).
 
 
 [CMU mocap](http://mocap.cs.cmu.edu/) was obtained from the [repo](https://github.com/chaneyddtt/Convolutional-Sequence-to-Sequence-Model-for-Human-Dynamics) of ConvSeq2Seq paper.
